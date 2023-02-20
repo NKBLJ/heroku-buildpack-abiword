@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Define o caminho para o executável do AbiWord
+export PATH="$PATH:$1/vendor/abiword/bin"

@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Define a versão do AbiWord a ser instalada
+ABIWORD_VERSION="3.0.4"
+
+# Define o diretório onde o AbiWord será instalado
+ABIWORD_INSTALL_DIR="$1/vendor/abiword"
+
+# Cria o diretório de instalação
+mkdir -p "$ABIWORD_INSTALL_DIR"
+
+# Baixa o arquivo de instalação do AbiWord
+wget "http://abisource.com/downloads/abiword/$ABIWORD_VERSION/source/abiword-$ABIWORD_VERSION.tar.gz" -O /tmp/abiword.tar.gz
+
+# Extrai o arquivo de instalação
+tar xzf /tmp/abiword.tar.gz -C /tmp
+
+# Acessa o diretório de código-fonte do AbiWord
+cd "/tmp/abiword-$ABIWORD_VERSION"
+
+# Configura e compila o AbiWord
+./configure --prefix="$ABIWORD_INSTALL_DIR"
+make
+make install

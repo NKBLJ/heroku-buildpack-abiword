@@ -1,0 +1,5 @@
+language: shell
+buildpacks:
+  - url: 'https://github.com/heroku/heroku-buildpack-apt'
+  - url: 'https://github.com/heroku/heroku-buildpack-locale'
+  - url: 'https://github.com/heroku/heroku-buildpack-shell'
